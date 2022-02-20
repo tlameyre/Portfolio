@@ -1,0 +1,22 @@
+.circle-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  &--outer {
+    width: 60px;
+    height: 60px;
+    border: 1px solid $color-text;
+    z-index: 12000;
+    opacity: 0.8;
+  }
+  &--inner {
+    width: 10px;
+    height: 10px;
+    left: -5px;
+    top: -5px;
+    z-index: 11000;
+    background: $color-text;
+  }
+}

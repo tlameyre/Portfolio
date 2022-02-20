@@ -1,0 +1,26 @@
+nav {
+  font-family: 'Avenir';
+  ul {
+    list-style-type: none;
+    margin: 0;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+      &.right {
+        float: right;
+      }
+      float: left;
+      a {
+        z-index: 10;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 14px 16px;
+        color: $color-text;
+        text-decoration: none;
+        margin: 0.5em;
+      }
+    }
+  }
+}
