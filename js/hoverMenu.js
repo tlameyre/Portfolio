@@ -15,13 +15,13 @@ const textureThree = new THREE.TextureLoader().load(images.imageThree);
 class WebGL{
     constructor(){
         this.container = document.querySelector('main');
-        this.links = [...document.querySelectorAll('.project')];
+        this.links = [...document.querySelectorAll('.school')];
         this.scene = new THREE.Scene();
         this.perspective = 1000;
         this.sizes = new THREE.Vector2(0,0);
         this.offset = new THREE.Vector2(0,0); // Positions of mesh on screen. Will be updated below.
         this.uniforms = {
-            uTexture: {value: 0},
+            uTexture: {value: 0.0},
             uAlpha: {value: 0.0},
             uOffset: {value: new THREE.Vector2(0.0, 0.0)}
         }
@@ -43,7 +43,7 @@ class WebGL{
                 this.uniforms.uTexture.value = lerp(this.uniforms.uTexture.value, 0.0, 0.1);
             });
         })
-        this.addEventListeners(document.querySelector('.project-list'));
+        this.addEventListeners(document.querySelector('.wrapper'));
         this.setUpCamera();
         this.onMouseMove();
         this.createMesh();
@@ -122,24 +122,9 @@ class WebGL{
         this.offset.x = lerp(this.offset.x, targetX, 0.1);
         this.offset.y = lerp(this.offset.y, targetY, 0.1);
         this.uniforms.uOffset.value.set((targetX- this.offset.x) * 0.0005 , -(targetY- this.offset.y) * 0.0005 )
-        // this.mesh.scale.set(this.sizes.x, this.sizes.y)
         this.mesh.position.set(this.offset.x - (window.innerWidth / 2)  , -this.offset.y + (window.innerHeight / 2), 0);
-
-        // // set uAlpha when list is hovered / unhovered
-        // this.linkHovered ? this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 1.0, 0.1)
-        // : this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
-
-        // for(let i = 0; i< this.links.length; i++){
-        //   if(this.linkHovered){
-        //       this.links[i].style.opacity = 1
-        //   }else{
-        //       this.links[i].style.opacity = 0.2
-        //   }
-        // }
-
         this.renderer.render(this.scene, this.camera);
         window.requestAnimationFrame(this.render.bind(this));
-
     }
 
 }

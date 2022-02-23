@@ -2,24 +2,29 @@
 @import './colors';
 @import './cursor';
 @import './navbar';
+@import './description';
 @import './hover-menu';
 @import './projects';
+@import './contact';
 
 * {
   padding: 0;
   margin: 0;
+  cursor: none;
 }
 body {
   margin: 0;
   background: $color-bg;
   padding: 0 10%;
+  font-family: 'Avenir';
+  color: $color-text;
 }
 
 
 
 .big-text {
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(80vh - 150px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,51 +78,4 @@ body {
   background: no-repeat 50% 50%;
   background-size: cover;
   z-index: 2;
-}
-.wrapper {
-  font-family: 'Callygraphy';
-  text-transform: uppercase;
-  font-weight: bold;
-  width: 90%;
-  margin: 0 auto;
-  height: 100%;
-}
-.project-list {
-  margin: 40px 0;
-  opacity: 0;
-  // transform: translateY(30px);
-}
-.project {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-basis: 1;
-  position: relative;
-  z-index: 2;
-  color: $color-text;
-  mix-blend-mode: normal;
-  transition: mix-blend-mode 3s ease-in-out;
-  .project-title h1 {
-    opacity: 0;
-    // transform: translateY(30px);
-  }
-  .project-title span {
-    font-weight: lighter;
-    opacity: 0;
-    // transform: translateY(30px);
-  }
-  .project-categ {
-    font-size: 1.2rem;
-  }
-  .project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-
 }

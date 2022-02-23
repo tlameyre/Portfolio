@@ -73,14 +73,27 @@ export default class Cursor {
     };
 
     const handleMouseEnterCursusLine = e => {
-      const target = e.currentTarget;
-      const box = target.getBoundingClientRect();
       this.outerCursorOriginals = {
         width: this.outerCursorBox.width,
         height: this.outerCursorBox.height
       };
       TweenMax.to(this.innerCursor, 0.5, {
         opacity: 0
+      });
+      TweenMax.to(this.outerCursor, 0.5, {
+        opacity: 0
+      });
+    };
+
+    const handleMouseEnterCardContainer = e => {
+      this.innerCursor.firstChild.style.fontSize = "1.6px"
+      this.innerCursor.firstChild.innerText = "DRAG"
+      this.outerCursorOriginals = {
+        width: this.outerCursorBox.width,
+        height: this.outerCursorBox.height
+      };
+      TweenMax.to(this.innerCursor, 0.5, {
+        scale: 10
       });
       TweenMax.to(this.outerCursor, 0.5, {
         opacity: 0
@@ -99,16 +112,34 @@ export default class Cursor {
       });
     };
 
+    const handleMouseLeaveCardContainer = () => {
+      TweenMax.to(this.innerCursor, 0.5, {
+        opacity: 1,
+        scale: 1
+      });
+      TweenMax.to(this.outerCursor, 0.5, {
+        width: this.outerCursorOriginals.width,
+        height: this.outerCursorOriginals.height,
+        opacity: 1,
+      });
+    };
+
     const linkItems = document.querySelectorAll("nav ul li a");
     linkItems.forEach(item => {
       item.addEventListener("mouseenter", handleMouseEnterNavLink);
       item.addEventListener("mouseleave", handleMouseLeave);
     });
 
-    const projectListItems = document.querySelectorAll(".project-list");
-    projectListItems.forEach(item => {
+    const schoolListItems = document.querySelectorAll(".school-list");
+    schoolListItems.forEach(item => {
       item.addEventListener("mouseenter", handleMouseEnterCursusLine);
       item.addEventListener("mouseleave", handleMouseLeave);
+    });
+
+    const projectListItems = document.querySelectorAll(".cards-container");
+    projectListItems.forEach(item => {
+      item.addEventListener("mouseenter", handleMouseEnterCardContainer);
+      item.addEventListener("mouseleave", handleMouseLeaveCardContainer);
     });
   }
 }

@@ -5,9 +5,9 @@ canvas {
   top: 0;
   left: 0;
   height: 100%;
-  z-index: -1;
 }
 main {
+  z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
@@ -16,27 +16,52 @@ main {
   font-size: 1.5rem;
   color: $color-text;
   font-family: Callygraphy;
-  ul {
-    position: absolute;
-    left: 10%;
-    top: 20%;
-    height: 60%;
-    width: 80%;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    li {
-      position: relative;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.118);
-      cursor: pointer;
-      transition: 1s;
-      // &:hover {
-      //   opacity: 1 !important;
-      // }
-    }
-  }
 }
 
+.wrapper {
+  font-family: 'Callygraphy';
+  text-transform: uppercase;
+  font-weight: bold;
+  // width: 90%;
+  // margin: 0 auto;
+  height: 100%;
+}
+.school-list {
+  margin: 40px 0;
+  opacity: 0;
+  // transform: translateY(30px);
+}
+.school {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 1;
+  position: relative;
+  z-index: 2;
+  color: $color-text;
+  mix-blend-mode: normal;
+  transition: mix-blend-mode 3s ease-in-out;
+  .school-title h1 {
+    opacity: 0;
+    // transform: translateY(30px);
+  }
+  .school-title span {
+    font-weight: lighter;
+    opacity: 0;
+    // transform: translateY(30px);
+  }
+  .school-date {
+    font-size: 1.2rem;
+  }
+  .school-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 
-
+}

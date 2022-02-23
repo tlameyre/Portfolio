@@ -1,0 +1,20 @@
+.contact {
+  height: 20vh;
+  width: 100%;
+  margin: 32px auto;
+  .title {
+    position: relative;
+    font-size: 2rem;
+    background-color: aqua;
+    h2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 1s ease;
+      &.bottom {
+        color: red;
+        transform: 'translateY(-20px) scaleY(0)';
+      }
+    }
+  }
+}

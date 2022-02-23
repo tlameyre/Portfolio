@@ -1,51 +1,56 @@
-// $finalHeight: 250px;
-// $finalWidth: 3 * $finalHeight;
-// $scrollBarHeight: 1px;
+/* container and cards */
 
-// ::-webkit-scrollbar {
-//   width: $scrollBarHeight;
-//   height: $scrollBarHeight;
-// }
+.project {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0;
+  opacity: 0;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $color-bg;
+    z-index: 1;
+  }
+  .project-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+  }
+  .cards-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    .cards {
+      position: absolute;
+      height: 100%;
+      min-width: 100%;
+      // display: grid;
+      // grid-template-columns: repeat(4, 400px);
+      // grid-gap: 50px;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+      .card {
+        overflow: hidden;
+        margin-left: 32px;
+        img {
+          min-width: 400px;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+}
 
-// ::-webkit-scrollbar-button {
-//   width: $scrollBarHeight;
-//   height: $scrollBarHeight;
-// }
 
-// body {
-//   background: #111;
-// }
 
-// div {
-//   box-sizing: border-box;
-// }
-
-// .horizontal-scroll-wrapper {
-//   position: absolute;
-//   display: block;
-//   width: calc(#{$finalHeight} + #{$scrollBarHeight});
-//   max-height: $finalWidth;
-//   margin: 0;
-//   padding-top: $scrollBarHeight;
-//   background: #abc;
-//   overflow-y: auto;
-//   overflow-x: hidden;
-//   transform: rotate(-90deg) translateY(-$finalHeight);
-//   transform-origin: right top;
-//   & > div {
-//     display: block;
-//     padding: 5px;
-//     background: #cab;
-//     transform: rotate(90deg);
-//     transform-origin: right top;
-//   }
-// }
-
-// .squares {
-//   padding: $finalHeight 0 0 0;
-//   & > div {
-//     width: $finalHeight;
-//     height: $finalHeight;
-//     margin: 10px 0;
-//   }
-// }
