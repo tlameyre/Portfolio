@@ -21,6 +21,10 @@
     flex-direction: column;
     justify-content: center;
     width: 30%;
+    h2 {
+      font-family: 'Callygraphy';
+      font-size: 1.8rem;
+    }
   }
   .cards-container {
     display: flex;

@@ -130,7 +130,8 @@ export default class Cursor {
       item.addEventListener("mouseleave", handleMouseLeave);
     });
 
-    const schoolListItems = document.querySelectorAll(".school-list");
+    const schoolListItems = [...document.querySelectorAll(".school-list")]
+    schoolListItems.push(document.querySelector('.big-text'));
     schoolListItems.forEach(item => {
       item.addEventListener("mouseenter", handleMouseEnterCursusLine);
       item.addEventListener("mouseleave", handleMouseLeave);

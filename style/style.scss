@@ -11,16 +11,23 @@
   padding: 0;
   margin: 0;
   cursor: none;
+  text-decoration: none;
+  color: $color-text;
 }
 body {
   margin: 0;
   background: $color-bg;
   padding: 0 10%;
   font-family: 'Avenir';
-  color: $color-text;
 }
 
+a {
+  color: aqua;
+}
 
+section {
+  margin: 64px 0;
+}
 
 .big-text {
   width: 100%;
@@ -78,4 +85,44 @@ body {
   background: no-repeat 50% 50%;
   background-size: cover;
   z-index: 2;
+}
+
+// Section title animation
+
+.section-title {
+  position: relative;
+  font-family: 'Callygraphy';
+  text-transform: uppercase;
+  span {
+    font-size: 3rem;
+  }
+  .section-title-text {
+    pointer-events: none;
+    display: block;
+    line-height: 1;
+    position: relative;
+  }
+  & > div:nth-child(1) span {
+    will-change: transform;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    transition-delay: calc(0.05s * var(--index));
+    transform-origin: bottom;
+    display: inline-block;
+  }
+  & > div:nth-child(2) span {
+    will-change: transform;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    transition-delay: calc(0.05s * var(--index));
+    transform-origin: top;
+    display: inline-block;
+    transform: translate3d(0,100%, 0) rotateX(-90deg);
+  }
+  &:hover > div:nth-child(1) span {
+    transform: translate3d(0, -100%, 0) rotateX(-90deg);
+  }
+  &:hover > div:nth-child(2) span {
+    transform: translate3d(0, 0, 0) rotateX(0deg);
+  }
 }

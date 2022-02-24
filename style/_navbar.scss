@@ -1,5 +1,7 @@
 nav {
-  font-family: 'Avenir';
+  font-family: 'Callygraphy';
+  min-height: 150px;
+  width: 100%;
   ul {
     list-style-type: none;
     margin: 0;
@@ -20,6 +22,7 @@ nav {
         color: $color-text;
         text-decoration: none;
         margin: 0.5em;
+        text-transform: uppercase;
       }
     }
   }

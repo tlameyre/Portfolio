@@ -102,21 +102,22 @@ project3Timeline.to('.pj3', { duration: 1, opacity: 1, ease: "ease.in" })
 project3Timeline.to('.ovr3', { duration: 1, x: '100%', ease: "ease.in" }, "<")
 
 
-const title = document.querySelector('.title')
+// SECTION TITLE ANIMATION
 
-title.addEventListener('mouseenter', () => {
-  const topText = title.childNodes[1]
-  const bottomText = title.childNodes[3]
-  console.log(bottomText);
-  topText.style.transform = 'translateY(-20px) scaleY(0)'
-  bottomText.style.transform = 'translateY(0px) scaleY(1)'
+const menuItems = [...document.querySelectorAll('.section-title')]
+
+menuItems.forEach(item => {
+  let word = item.children[0].children[0].innerText.split('')
+  item.children[0].innerHTML = ''
+  word.forEach((letter,index) => {
+    item.children[0].innerHTML += `<span style="--index:${index};">${letter}</span>`
+  })
+  let cloneDiv = item.children[0].cloneNode(true)
+  cloneDiv.style.position = 'absolute'
+  cloneDiv.style.left = '0'
+  cloneDiv.style.top = '0'
+  cloneDiv.style.display = 'flex'
+  item.appendChild(cloneDiv)
+
 })
 
-title.addEventListener('mouseleave', () => {
-  const topText = title.childNodes[1]
-  const bottomText = title.childNodes[3]
-  topText.style.transform = 'translateY(0px) scaleY(1)'
-  bottomText.style.transform = 'translateY(20px) scaleY(0)'
-})
-
-console.log(title);
