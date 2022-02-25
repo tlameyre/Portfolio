@@ -7,6 +7,7 @@
   align-items: center;
   margin: 32px 0;
   opacity: 0;
+  transform: scale(0.98);
   .overlay {
     position: absolute;
     top: 0;
@@ -17,15 +18,18 @@
     z-index: 1;
   }
   .project-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 30%;
+    display: grid;
+    grid-gap: 16px;
+    width: 55%;
     h2 {
       font-family: 'Callygraphy';
       font-size: 1.8rem;
     }
+    a {
+      width: fit-content;
+    }
   }
+
   .cards-container {
     display: flex;
     position: relative;
@@ -36,9 +40,6 @@
       position: absolute;
       height: 100%;
       min-width: 100%;
-      // display: grid;
-      // grid-template-columns: repeat(4, 400px);
-      // grid-gap: 50px;
       display: flex;
       justify-content: center;
       pointer-events: none;

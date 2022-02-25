@@ -1,20 +1,18 @@
-.contact {
-  height: 20vh;
+.links {
   width: 100%;
-  margin: 32px auto;
-  .title {
-    position: relative;
-    font-size: 2rem;
-    background-color: aqua;
-    h2 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: all 1s ease;
-      &.bottom {
-        color: red;
-        transform: 'translateY(-20px) scaleY(0)';
-      }
-    }
+  height: 40vh;
+  background-color: red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .link {
+    height: 80px;
+    width: 80px;
+    padding: 16px;
+    border-radius: 50%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

@@ -93,10 +93,30 @@ export default class Cursor {
         height: this.outerCursorBox.height
       };
       TweenMax.to(this.innerCursor, 0.5, {
-        scale: 10
+        scale: 9
       });
       TweenMax.to(this.outerCursor, 0.5, {
         opacity: 0
+      });
+    };
+
+    const handleMouseDownCardContainer = e => {
+      this.outerCursorOriginals = {
+        width: this.outerCursorBox.width,
+        height: this.outerCursorBox.height
+      };
+      TweenMax.to(this.innerCursor, 0.2, {
+        scale: 10
+      });
+    };
+
+    const handleMouseUpCardContainer = e => {
+      this.outerCursorOriginals = {
+        width: this.outerCursorBox.width,
+        height: this.outerCursorBox.height
+      };
+      TweenMax.to(this.innerCursor, 0.2, {
+        scale: 9
       });
     };
 
@@ -113,6 +133,7 @@ export default class Cursor {
     };
 
     const handleMouseLeaveCardContainer = () => {
+      this.innerCursor.firstChild.innerText = ""
       TweenMax.to(this.innerCursor, 0.5, {
         opacity: 1,
         scale: 1
@@ -124,14 +145,14 @@ export default class Cursor {
       });
     };
 
-    const linkItems = document.querySelectorAll("nav ul li a");
+    const linkItems = document.querySelectorAll("nav ul li a, .link, .project-description a");
     linkItems.forEach(item => {
       item.addEventListener("mouseenter", handleMouseEnterNavLink);
       item.addEventListener("mouseleave", handleMouseLeave);
     });
 
     const schoolListItems = [...document.querySelectorAll(".school-list")]
-    schoolListItems.push(document.querySelector('.big-text'));
+    schoolListItems.push(document.querySelector('.banner-text'));
     schoolListItems.forEach(item => {
       item.addEventListener("mouseenter", handleMouseEnterCursusLine);
       item.addEventListener("mouseleave", handleMouseLeave);
@@ -141,6 +162,9 @@ export default class Cursor {
     projectListItems.forEach(item => {
       item.addEventListener("mouseenter", handleMouseEnterCardContainer);
       item.addEventListener("mouseleave", handleMouseLeaveCardContainer);
+      item.addEventListener("mousedown", handleMouseDownCardContainer);
+      item.addEventListener("mouseup", handleMouseUpCardContainer);
+
     });
   }
 }

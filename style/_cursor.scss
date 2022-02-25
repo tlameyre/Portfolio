@@ -8,7 +8,7 @@
   &--outer {
     width: 60px;
     height: 60px;
-    border: 1px solid red;
+    border: 1px solid $color-text;
     opacity: 0.8;
   }
   &--inner {
@@ -16,9 +16,12 @@
     height: 10px;
     left: -5px;
     top: -5px;
-    background: red;
+    background: $color-text;
     display: flex;
     justify-content: center;
     align-items: center;
+    p {
+      color: $color-bg;
+    }
   }
 }

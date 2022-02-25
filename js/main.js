@@ -65,41 +65,21 @@ cursusTimeLine.staggerTo('.school-title span', 0.5, { opacity: 1}, 0.2, "<+=0.1"
 
 // PROJECT LINE REVEAL ANIMATION
 
-// 1st PROJECT TIMELINE
-let project1Timeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.pj1',
-    markers: {startColor: "red", endColor: "red", fontSize: "18px", fontWeight: "bold", indent: 20},
-    start: 'top bottom-=20%'
-  }
-})
+const nbProjects = [...document.querySelectorAll('.project')]
+console.log(nbProjects.length);
 
-project1Timeline.to('.pj1', { duration: 1, opacity: 1, ease: "ease.in" })
-project1Timeline.to('.ovr1', { duration: 1, x: '100%', ease: "ease.in" }, "<")
-
-// 2nd PROJECT TIMELINE
-let project2Timeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.pj2',
-    markers: {startColor: "blue", endColor: "blue", fontSize: "18px", fontWeight: "bold", indent: 20},
-    start: 'top bottom-=20%'
-  }
-})
-
-project2Timeline.to('.pj2', { duration: 1, opacity: 1, ease: "ease.in" })
-project2Timeline.to('.ovr2', { duration: 1, x: '100%', ease: "ease.in" }, "<")
-
-// 3rd PROJECT TIMELINE
-let project3Timeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.pj3',
-    markers: {startColor: "blue", endColor: "blue", fontSize: "18px", fontWeight: "bold", indent: 20},
-    start: 'top bottom-=20%'
-  }
-})
-
-project3Timeline.to('.pj3', { duration: 1, opacity: 1, ease: "ease.in" })
-project3Timeline.to('.ovr3', { duration: 1, x: '100%', ease: "ease.in" }, "<")
+for (let i = 0; i < nbProjects.length; i++) {
+  // 1st PROJECT TIMELINE
+  let projectTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: `.pj${i+1}`,
+      // markers: {startColor: "red", endColor: "red", fontSize: "18px", fontWeight: "bold", indent: 20},
+      start: 'top bottom-=20%'
+    }
+  })
+  projectTimeline.to(`.pj${i+1}`, { duration: 1, opacity: 1, scale: 1, ease: "ease.in" })
+  projectTimeline.to(`.ovr${i+1}`, { duration: 1, x: '100%', ease: "ease.in" }, "<")
+}
 
 
 // SECTION TITLE ANIMATION
@@ -121,3 +101,14 @@ menuItems.forEach(item => {
 
 })
 
+// LINKS ANIMATION
+
+let linkTimeLine = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#contact',
+    markers: {startColor: "green", endColor: "green", fontSize: "18px", fontWeight: "bold", indent: 20},
+    start: 'top bottom-=50%'
+  }
+})
+
+linkTimeLine.to('.link', 1, { transform: 'rotate(300deg)'})

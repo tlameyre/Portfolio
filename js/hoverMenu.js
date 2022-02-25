@@ -13,7 +13,7 @@ const textureThree = new THREE.TextureLoader().load(images.imageThree);
 const textureFour = new THREE.TextureLoader().load(images.imageFour);
 
 
-const banner = document.querySelector(".big-text")
+const banner = document.querySelector(".banner-text")
 class WebGL{
   constructor(){
       this.container = document.querySelector('main');
@@ -34,15 +34,15 @@ class WebGL{
             switch(idx){
                 case 0:
                     this.uniforms.uTexture.value = textureOne;
-                    this.mesh.scale.set(textureOne.image.width, textureOne.image.height, 1);
+                    this.mesh.scale.set(textureOne.image.width * 0.8, textureOne.image.height * 0.8, 1);
                     break;
                 case 1:
                     this.uniforms.uTexture.value = textureTwo;
-                    this.mesh.scale.set(textureTwo.image.width, textureTwo.image.height, 1);
+                    this.mesh.scale.set(textureTwo.image.width * 0.8, textureTwo.image.height * 0.8, 1);
                     break;
                 case 2:
                     this.uniforms.uTexture.value = textureThree;
-                    this.mesh.scale.set(textureThree.image.width, textureThree.image.height, 1);
+                    this.mesh.scale.set(textureThree.image.width * 0.8, textureThree.image.height * 0.8, 1);
                     break;
                 case 3:
                     this.uniforms.uTexture.value = textureFour;
