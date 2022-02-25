@@ -86,18 +86,23 @@ export default class Cursor {
     };
 
     const handleMouseEnterCardContainer = e => {
-      this.innerCursor.firstChild.style.fontSize = "1.6px"
-      this.innerCursor.firstChild.innerText = "DRAG"
+      this.innerCursor.children[1].style.fontSize = "1.6px"
+      this.innerCursor.children[1].innerText = "DRAG"
       this.outerCursorOriginals = {
         width: this.outerCursorBox.width,
         height: this.outerCursorBox.height
       };
       TweenMax.to(this.innerCursor, 0.5, {
-        scale: 9
+        scale: 7
       });
       TweenMax.to(this.outerCursor, 0.5, {
         opacity: 0
       });
+      [...document.querySelectorAll(".arrow")].forEach(arrow => {
+        TweenMax.to(arrow, 0.5, {
+          opacity: 1
+        });
+      })
     };
 
     const handleMouseDownCardContainer = e => {
@@ -106,7 +111,7 @@ export default class Cursor {
         height: this.outerCursorBox.height
       };
       TweenMax.to(this.innerCursor, 0.2, {
-        scale: 10
+        scale: 7.5
       });
     };
 
@@ -116,7 +121,7 @@ export default class Cursor {
         height: this.outerCursorBox.height
       };
       TweenMax.to(this.innerCursor, 0.2, {
-        scale: 9
+        scale: 7
       });
     };
 
@@ -133,7 +138,7 @@ export default class Cursor {
     };
 
     const handleMouseLeaveCardContainer = () => {
-      this.innerCursor.firstChild.innerText = ""
+      this.innerCursor.children[1].innerText = ""
       TweenMax.to(this.innerCursor, 0.5, {
         opacity: 1,
         scale: 1
@@ -143,15 +148,20 @@ export default class Cursor {
         height: this.outerCursorOriginals.height,
         opacity: 1,
       });
+      [...document.querySelectorAll(".arrow")].forEach(arrow => {
+        TweenMax.to(arrow, 0.5, {
+          opacity: 0
+        });
+      })
     };
 
-    const linkItems = document.querySelectorAll("nav ul li a, .link, .project-description a");
+    const linkItems = document.querySelectorAll("nav ul li a, .project-description a");
     linkItems.forEach(item => {
       item.addEventListener("mouseenter", handleMouseEnterNavLink);
       item.addEventListener("mouseleave", handleMouseLeave);
     });
 
-    const schoolListItems = [...document.querySelectorAll(".school-list")]
+    const schoolListItems = [...document.querySelectorAll(".school-list, .link")]
     schoolListItems.push(document.querySelector('.banner-text'));
     schoolListItems.forEach(item => {
       item.addEventListener("mouseenter", handleMouseEnterCursusLine);

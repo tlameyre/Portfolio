@@ -79,6 +79,8 @@ for (let i = 0; i < nbProjects.length; i++) {
   })
   projectTimeline.to(`.pj${i+1}`, { duration: 1, opacity: 1, scale: 1, ease: "ease.in" })
   projectTimeline.to(`.ovr${i+1}`, { duration: 1, x: '100%', ease: "ease.in" }, "<")
+  projectTimeline.to(`.ovr${i+1}`, { duration: 1, display: 'none', ease: "ease.in" }, "<")
+  // document.querySelector(`.ovr${i+1}`).style.display = 'none'
 }
 
 
@@ -107,8 +109,17 @@ let linkTimeLine = gsap.timeline({
   scrollTrigger: {
     trigger: '#contact',
     markers: {startColor: "green", endColor: "green", fontSize: "18px", fontWeight: "bold", indent: 20},
-    start: 'top bottom-=50%'
+    start: 'top bottom-=30%'
   }
 })
 
-linkTimeLine.to('.link', 1, { transform: 'rotate(300deg)'})
+linkTimeLine.staggerTo('.link', 1, { opacity: 1, transform: 'translateX(0px) rotate(0deg)'}, 0.1, "<+=0.3")
+
+const caca = [...document.querySelectorAll(".link")]
+caca.forEach(link => {
+  link.addEventListener("mouseenter", () => {
+    console.log("yo");
+  var duration = 1
+  TweenMax.to(link, duration / 4, {y:-50, ease:Power2.easeOut});
+  TweenMax.to(link, duration / 2, {y:0, ease:Bounce.easeOut, delay:duration / 4});
+})})

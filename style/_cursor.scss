@@ -20,6 +20,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    .arrow {
+      transform: scale(0.2);
+      opacity: 0;
+      position: absolute;
+      top: -5.5px;
+      left: 7.5px;
+      &--left {
+        left: -5.5px;
+      }
+      i {
+        color: $color-text;
+      }
+    }
     p {
       color: $color-bg;
     }
