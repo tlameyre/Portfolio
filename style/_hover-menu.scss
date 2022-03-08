@@ -29,7 +29,7 @@ main {
   opacity: 0;
 }
 .school {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(244, 96, 54, 1);
   padding: 12px;
   display: flex;
   align-items: center;
@@ -59,4 +59,24 @@ main {
     z-index: 1;
   }
 
+}
+
+@media only screen and (max-width: 900px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+  .school {
+    .school-date {
+      font-size: 0.7rem;
+    }
+    .school-title {
+      h1 {
+        font-size: 1rem;
+      }
+      span {
+        font-size: 0.7rem;
+      }
+    }
+  }
 }

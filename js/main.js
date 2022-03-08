@@ -21,29 +21,31 @@ linkItems.forEach(item => {
 });
 
 // BANNER REVEAL ANIMATION
-
 const bannerTimeline = new TimelineMax({})
 
 window.addEventListener("load", () => {
   bannerTimeline.staggerFrom('.hidetext', 1, { y: "100%"}, 0.3)
-  console.log();
 })
 
 // DESCRIPTION TEXT REVEAL ANIMATION
 
+const lines = [...document.querySelectorAll('.line')]
+lines.forEach(line =>{
+  const offset = line.getBoundingClientRect().height
+  line.children[0].style.transform = `translateY(${offset}px)`
+})
+
 const textrev = gsap.timeline({
   scrollTrigger: {
     trigger: '.description',
-    // markers: {startColor: "white", endColor: "white", fontSize: "18px", fontWeight: "bold", indent: 20},
-    start: 'top bottom-=20%'
+    markers: {startColor: "white", endColor: "white", fontSize: "18px", fontWeight: "bold", indent: 20},
+    start: 'top bottom-=30%'
   }
 })
 
-textrev.from(".line span", 1.8, {
-  y: 200,
+textrev.to(".line span", 1.8, {
+  y: 0,
   ease: "power4.out",
-  delay: 0,
-  skewY: 10,
   stagger: {
     amount: 0.8
   }
@@ -66,7 +68,6 @@ cursusTimeLine.staggerTo('.school-title span', 0.5, { opacity: 1}, 0.2, "<+=0.1"
 // PROJECT LINE REVEAL ANIMATION
 
 const nbProjects = [...document.querySelectorAll('.project')]
-console.log(nbProjects.length);
 
 for (let i = 0; i < nbProjects.length; i++) {
   // 1st PROJECT TIMELINE
@@ -108,8 +109,8 @@ menuItems.forEach(item => {
 let linkTimeLine = gsap.timeline({
   scrollTrigger: {
     trigger: '#contact',
-    markers: {startColor: "green", endColor: "green", fontSize: "18px", fontWeight: "bold", indent: 20},
-    start: 'top bottom-=30%'
+    // markers: {startColor: "green", endColor: "green", fontSize: "18px", fontWeight: "bold", indent: 20},
+    start: 'top bottom-=20%'
   }
 })
 
@@ -118,7 +119,6 @@ linkTimeLine.staggerTo('.link', 1, { opacity: 1, transform: 'translateX(0px) rot
 const caca = [...document.querySelectorAll(".link")]
 caca.forEach(link => {
   link.addEventListener("mouseenter", () => {
-    console.log("yo");
   var duration = 1
   TweenMax.to(link, duration / 4, {y:-50, ease:Power2.easeOut});
   TweenMax.to(link, duration / 2, {y:0, ease:Bounce.easeOut, delay:duration / 4});

@@ -1,16 +1,23 @@
 .description {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   .line {
-    height: 55px;
-    position: relative;
+    background-color: transparent;
+    margin: 16px 0;
     overflow: hidden;
     span {
-      position: absolute;
+      display: inline-block;
       font-size: 2rem;
-      line-height: 4.2rem;
     }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .description .line span {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .description .line span {
+    font-size: 1rem;
   }
 }

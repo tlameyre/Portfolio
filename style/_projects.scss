@@ -58,4 +58,22 @@
 }
 
 
+@media only screen and (max-width: 600px) {
+  .project {
+    flex-direction: column;
+    .project-description {
+      width: 100%;
+      grid-gap: 4px;
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
 
+    .cards-container .cards {
+      margin-top: 16px;
+      .card:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -19,7 +19,6 @@ class WebGL{
       this.container = document.querySelector('main');
       this.links = [...document.querySelectorAll('.school')];
       this.links.push(banner)
-      console.log(this.links);
       this.scene = new THREE.Scene();
       this.perspective = 1000;
       this.sizes = new THREE.Vector2(0,0);

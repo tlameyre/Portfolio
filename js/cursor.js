@@ -86,7 +86,7 @@ export default class Cursor {
     };
 
     const handleMouseEnterCardContainer = e => {
-      this.innerCursor.children[1].style.fontSize = "1.6px"
+      this.innerCursor.children[1].style.fontSize = "2px"
       this.innerCursor.children[1].innerText = "DRAG"
       this.outerCursorOriginals = {
         width: this.outerCursorBox.width,

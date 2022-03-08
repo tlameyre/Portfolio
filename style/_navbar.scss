@@ -27,3 +27,15 @@ nav {
     }
   }
 }
+
+@media only screen and (max-width: 900px) {
+  nav ul li a {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    display: none;
+  }
+}

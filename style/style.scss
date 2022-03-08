@@ -24,7 +24,7 @@ body {
 }
 
 a {
-  color: aqua;
+  color: $color-link;
 }
 
 section {
@@ -43,13 +43,16 @@ section {
   color: $color-text;
   position: relative;
   overflow: hidden;
-  font-size: 200px;
-  height: 250px;
+  height: 30vh;
+  display: flex;
+  align-items: center;
   margin: 0;
   text-transform: capitalize;
   .hidetext {
     position: absolute;
     z-index: 200;
+    white-space: nowrap;
+    font-size: 14vw;
   }
 }
 
@@ -126,5 +129,21 @@ section {
   }
   &:hover > div:nth-child(2) span {
     transform: translate3d(0, 0, 0) rotateX(0deg);
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .section-title span {
+    font-size: 2rem;
+  }
+  .banner-text > h1 {
+    height: 10vh;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    padding: 0 5%;
   }
 }
