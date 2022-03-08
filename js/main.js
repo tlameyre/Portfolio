@@ -38,7 +38,7 @@ lines.forEach(line =>{
 const textrev = gsap.timeline({
   scrollTrigger: {
     trigger: '.description',
-    markers: {startColor: "white", endColor: "white", fontSize: "18px", fontWeight: "bold", indent: 20},
+    // markers: {startColor: "white", endColor: "white", fontSize: "18px", fontWeight: "bold", indent: 20},
     start: 'top bottom-=30%'
   }
 })

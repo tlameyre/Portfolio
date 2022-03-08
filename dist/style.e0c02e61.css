@@ -1,0 +1,457 @@
+@font-face {
+  font-family: Callygraphy;
+  src: url(/GoldenbookLight.a657f1c0.otf);
+}
+@font-face {
+  font-family: NormalText;
+  src: url(/Aeonik-Regular.d158ff11.otf);
+}
+.circle-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 10000;
+}
+.circle-cursor--outer {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #E6EFE9;
+  opacity: 0.8;
+}
+.circle-cursor--inner {
+  width: 10px;
+  height: 10px;
+  left: -5px;
+  top: -5px;
+  background: #f46036;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle-cursor--inner .arrow {
+  transform: scale(0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle-cursor--inner .arrow i {
+  color: #f46036;
+}
+.circle-cursor--inner span {
+  color: #E6EFE9;
+}
+
+@media only screen and (max-width: 900px) {
+  .circle-cursor {
+    display: none;
+  }
+}
+nav {
+  font-family: "Callygraphy";
+  min-height: 150px;
+  width: 100%;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  float: left;
+}
+nav ul li.right {
+  float: right;
+}
+nav ul li a {
+  z-index: 10;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 14px 16px;
+  color: #E6EFE9;
+  text-decoration: none;
+  margin: 0.5em;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 900px) {
+  nav ul li a {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  nav {
+    display: none;
+  }
+}
+.description .line {
+  background-color: transparent;
+  margin: 16px 0;
+  overflow: hidden;
+}
+.description .line span {
+  display: inline-block;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .description .line span {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .description .line span {
+    font-size: 1rem;
+  }
+}
+@font-face {
+  font-family: Callygraphy;
+  src: url(/GoldenbookLight.a657f1c0.otf);
+}
+@font-face {
+  font-family: NormalText;
+  src: url(/Aeonik-Regular.d158ff11.otf);
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+main {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #E6EFE9;
+  font-family: Callygraphy;
+}
+
+.wrapper {
+  font-family: "Callygraphy";
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 100%;
+}
+
+.school-list {
+  margin: 40px 0;
+  opacity: 0;
+}
+
+.school {
+  border-bottom: 1px solid #f46036;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 1;
+  position: relative;
+  z-index: 2;
+  color: #E6EFE9;
+  mix-blend-mode: normal;
+  transition: mix-blend-mode 3s ease-in-out;
+}
+.school .school-title h1 {
+  opacity: 0;
+}
+.school .school-title span {
+  font-weight: lighter;
+  opacity: 0;
+}
+.school .school-date {
+  font-size: 1.2rem;
+}
+.school .school-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .school .school-date {
+    font-size: 0.7rem;
+  }
+  .school .school-title h1 {
+    font-size: 1rem;
+  }
+  .school .school-title span {
+    font-size: 0.7rem;
+  }
+}
+/* container and cards */
+.project {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0;
+  opacity: 0;
+  transform: scale(0.98);
+}
+.project .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #11202D;
+  z-index: 1;
+}
+.project .project-description {
+  display: grid;
+  grid-gap: 16px;
+  width: 55%;
+}
+.project .project-description h2 {
+  font-family: "Callygraphy";
+  font-size: 1.8rem;
+}
+.project .project-description a {
+  width: fit-content;
+}
+.project .cards-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  overflow: hidden;
+}
+.project .cards-container .cards {
+  position: absolute;
+  height: 100%;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.project .cards-container .cards .card {
+  overflow: hidden;
+  margin-left: 32px;
+}
+.project .cards-container .cards .card img {
+  min-width: 400px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .cards-container {
+    overflow: auto !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .project {
+    flex-direction: column;
+  }
+  .project .project-description {
+    width: 100%;
+    grid-gap: 4px;
+    margin: 16px 0;
+  }
+  .project .project-description h2 {
+    font-size: 1.3rem;
+  }
+  .project .cards-container .cards {
+    height: inherit;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+  .project .cards-container .cards .card {
+    margin-left: 0;
+  }
+  .project .cards-container .cards .card img {
+    width: 100%;
+    min-width: inherit;
+  }
+}
+.links {
+  width: 50%;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-content: center;
+}
+.links .link {
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
+  padding: 16px;
+  border-radius: 50%;
+  border: 2px solid #E6EFE9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-100%) rotate(-120deg);
+}
+
+@media only screen and (max-width: 900px) {
+  .links {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .links {
+    width: 100%;
+  }
+  .links .link {
+    height: 30px;
+    width: 30px;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  cursor: none;
+  text-decoration: none;
+  color: #E6EFE9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #11202D;
+  padding: 0 10%;
+  font-family: "Avenir";
+}
+
+a {
+  color: #f46036;
+}
+
+section {
+  margin: 64px 0;
+}
+
+.banner-text {
+  width: 100%;
+  height: calc(80vh - 150px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner-text > h1 {
+  font-family: "Callygraphy";
+  color: #E6EFE9;
+  position: relative;
+  overflow: hidden;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  text-transform: capitalize;
+}
+.banner-text > h1 .hidetext {
+  position: absolute;
+  z-index: 200;
+  white-space: nowrap;
+  font-size: 14vw;
+}
+
+.hover-reveal {
+  position: absolute;
+  z-index: -1;
+  width: 220px;
+  height: 320px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+.hover-reveal .hover-reveal__inner {
+  overflow: hidden;
+}
+.hover-reveal .hover-reveal__inner, .hover-reveal .hover-reveal__inner .hover-reveal__img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.hover-reveal .hover-reveal__inner .hover-reveal__img {
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.cursor {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+  background: no-repeat 50% 50%;
+  background-size: cover;
+  z-index: 2;
+}
+
+.section-title {
+  position: relative;
+  font-family: "Callygraphy";
+  text-transform: uppercase;
+}
+.section-title span {
+  font-size: 3rem;
+}
+.section-title .section-title-text {
+  pointer-events: none;
+  display: block;
+  line-height: 1;
+  position: relative;
+}
+.section-title > div:nth-child(1) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: bottom;
+  display: inline-block;
+}
+.section-title > div:nth-child(2) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: top;
+  display: inline-block;
+  transform: translate3d(0, 100%, 0) rotateX(-90deg);
+}
+.section-title:hover > div:nth-child(1) span {
+  transform: translate3d(0, -100%, 0) rotateX(-90deg);
+}
+.section-title:hover > div:nth-child(2) span {
+  transform: translate3d(0, 0, 0) rotateX(0deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .section-title span {
+    font-size: 2rem;
+  }
+
+  .banner-text > h1 {
+    height: 10vh;
+  }
+}
+@media only screen and (max-width: 900px) {
+  body {
+    padding: 0 5%;
+  }
+}
+
+/*# sourceMappingURL=/style.e0c02e61.css.map */

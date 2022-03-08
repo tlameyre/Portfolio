@@ -57,6 +57,12 @@
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .cards-container {
+    overflow: auto !important;
+  }
+}
+
 
 @media only screen and (max-width: 600px) {
   .project {
@@ -64,15 +70,24 @@
     .project-description {
       width: 100%;
       grid-gap: 4px;
+      margin: 16px 0;
       h2 {
         font-size: 1.3rem;
       }
     }
 
-    .cards-container .cards {
-      margin-top: 16px;
-      .card:first-child {
-        margin-left: 0;
+    .cards-container {
+      .cards {
+        height: inherit;
+        flex-direction: column;
+        margin-top: 16px;
+        .card {
+          margin-left: 0;
+        }
+        .card img {
+          width: 100%;
+          min-width: inherit;
+        }
       }
     }
   }
