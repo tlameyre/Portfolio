@@ -181,4 +181,6 @@
 if (window.screen.width > 1024) {
   console.log("Ku")
   new Cursor();
+} else {
+  console.log("yo")
 }

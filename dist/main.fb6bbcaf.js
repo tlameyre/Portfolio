@@ -345,6 +345,8 @@ exports.default = Cursor;
 if (window.screen.width > 1024) {
   console.log("Ku");
   new Cursor();
+} else {
+  console.log("yo");
 }
 },{}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
 "use strict";
@@ -37330,7 +37332,9 @@ var WebGL = /*#__PURE__*/function () {
   return WebGL;
 }();
 
-new WebGL();
+if (window.screen.width > 1024) {
+  new WebGL();
+}
 },{"three":"node_modules/three/build/three.module.js","./images":"js/images.js","./shaders/vertex.glsl":"js/shaders/vertex.glsl","./shaders/fragment.glsl":"js/shaders/fragment.glsl","./utils":"js/utils.js"}],"js/projects.js":[function(require,module,exports) {
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -37568,7 +37572,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49764" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51853" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

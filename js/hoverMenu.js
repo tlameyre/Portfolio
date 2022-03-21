@@ -138,4 +138,6 @@ class WebGL{
   }
 }
 
-new WebGL()
+if (window.screen.width > 1024) {
+  new WebGL()
+}
