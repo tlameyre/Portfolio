@@ -341,7 +341,11 @@ var Cursor = /*#__PURE__*/function () {
 }();
 
 exports.default = Cursor;
-new Cursor();
+
+if (window.screen.width > 1024) {
+  console.log("Ku");
+  new Cursor();
+}
 },{}],"node_modules/three/build/three.module.js":[function(require,module,exports) {
 "use strict";
 
@@ -37564,7 +37568,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49671" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49764" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
