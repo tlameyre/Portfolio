@@ -93,7 +93,13 @@
           height: this.outerCursorBox.height
         };
         TweenMax.to(this.innerCursor, 0.5, {
-          scale: 7
+          width: '70px',
+          height: '70px',
+          left: '-35px',
+          top: '-35px'
+        });
+        TweenMax.to(this.innerCursor.children[1], 0.5, {
+          fontSize: "14px"
         });
         TweenMax.to(this.outerCursor, 0.5, {
           opacity: 0
@@ -111,7 +117,10 @@
           height: this.outerCursorBox.height
         };
         TweenMax.to(this.innerCursor, 0.2, {
-          scale: 7.5
+          width: '80px',
+          height: '80px',
+          left: '-40px',
+          top: '-40px'
         });
       };
 
@@ -121,7 +130,10 @@
           height: this.outerCursorBox.height
         };
         TweenMax.to(this.innerCursor, 0.2, {
-          scale: 7
+          width: '70px',
+          height: '70px',
+          left: '-35px',
+          top: '-35px'
         });
       };
 
@@ -141,7 +153,10 @@
         this.innerCursor.children[1].innerText = ""
         TweenMax.to(this.innerCursor, 0.5, {
           opacity: 1,
-          scale: 1
+          height: '10px',
+          width: '10px',
+          top: '-5px',
+          left: '-5px',
         });
         TweenMax.to(this.outerCursor, 0.5, {
           width: this.outerCursorOriginals.width,
@@ -172,6 +187,7 @@
       projectListItems.forEach(item => {
         item.addEventListener("mouseenter", handleMouseEnterCardContainer);
         item.addEventListener("mouseleave", handleMouseLeaveCardContainer);
+
         item.addEventListener("mousedown", handleMouseDownCardContainer);
         item.addEventListener("mouseup", handleMouseUpCardContainer);
 

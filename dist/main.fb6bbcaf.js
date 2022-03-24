@@ -250,7 +250,13 @@ var Cursor = /*#__PURE__*/function () {
           height: _this2.outerCursorBox.height
         };
         TweenMax.to(_this2.innerCursor, 0.5, {
-          scale: 7
+          width: '70px',
+          height: '70px',
+          left: '-35px',
+          top: '-35px'
+        });
+        TweenMax.to(_this2.innerCursor.children[1], 0.5, {
+          fontSize: "14px"
         });
         TweenMax.to(_this2.outerCursor, 0.5, {
           opacity: 0
@@ -269,7 +275,10 @@ var Cursor = /*#__PURE__*/function () {
           height: _this2.outerCursorBox.height
         };
         TweenMax.to(_this2.innerCursor, 0.2, {
-          scale: 7.5
+          width: '80px',
+          height: '80px',
+          left: '-40px',
+          top: '-40px'
         });
       };
 
@@ -279,7 +288,10 @@ var Cursor = /*#__PURE__*/function () {
           height: _this2.outerCursorBox.height
         };
         TweenMax.to(_this2.innerCursor, 0.2, {
-          scale: 7
+          width: '70px',
+          height: '70px',
+          left: '-35px',
+          top: '-35px'
         });
       };
 
@@ -299,7 +311,10 @@ var Cursor = /*#__PURE__*/function () {
         _this2.innerCursor.children[1].innerText = "";
         TweenMax.to(_this2.innerCursor, 0.5, {
           opacity: 1,
-          scale: 1
+          height: '10px',
+          width: '10px',
+          top: '-5px',
+          left: '-5px'
         });
         TweenMax.to(_this2.outerCursor, 0.5, {
           width: _this2.outerCursorOriginals.width,
@@ -37572,7 +37587,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51853" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54183" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

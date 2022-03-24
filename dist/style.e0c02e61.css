@@ -239,6 +239,8 @@ main {
 .project .cards-container .cards .card {
   overflow: hidden;
   margin-left: 32px;
+  display: -webkit-box;
+  max-width: 600px;
 }
 .project .cards-container .cards .card img {
   min-width: 400px;

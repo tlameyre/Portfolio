@@ -46,6 +46,8 @@
       .card {
         overflow: hidden;
         margin-left: 32px;
+        display: -webkit-box;
+        max-width: 600px;
         img {
           min-width: 400px;
           height: 100%;
